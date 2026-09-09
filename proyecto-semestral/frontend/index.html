@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HuertoHogar | Productos frescos y orgánicos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- ==================== HEADER ==================== -->
+    <header>
+        <nav>
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                HuertoHogar
+            </a>
+            <!-- Menú de navegación -->
+            <ul class="menu">
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="productos.html">Productos</a>
+                </li>
+                <li>
+                    <a href="nosotros.html">Nosotros</a>
+                </li>
+                <li>
+                    <a href="blogs.html">Blogs</a>
+                </li>
+                <li>
+                    <a href="login.html">Iniciar sesión</a>
+                </li>
+                <li>
+                    <a href="#" id="carrito-link">
+                        🛒 Carrito
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+    <main>
+        <!-- ==================== SECCIÓN PRINCIPAL ==================== -->
+        <section class="cuerpo">
+            <div class="cuerpo-contenido">
+                <h1>
+                    Productos frescos directamente a tu hogar
+                </h1>
+                <p>
+                    En HuertoHogar encontrarás frutas, verduras y productos
+                    orgánicos seleccionados para una alimentación saludable.
+                </p>
+                <a href="productos.html" class="boton">
+                    Ver productos
+                </a>
+            </div>
+            <div class="hero-imagen">
+                <img
+                    src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=1000&q=80"
+                    alt="Frutas y verduras frescas"
+                >
+            </div>
+        </section>
+
+        <!-- ==================== PRODUCTOS DESTACADOS ==================== -->
+        <section class="productos-destacados">
+            <h2>
+                Productos destacados
+            </h2>
+            <p class="descripcion-seccion">
+                Conoce algunos de nuestros productos frescos y orgánicos.
+            </p>
+            <!--
+                Este contenedor será utilizado posteriormente
+                por productos.js para mostrar los productos.
+            -->
+            <div id="lista-productos" class="lista-productos">
+                <!-- Producto destacado 1 -->
+                <article class="producto">
+                    <img
+                        src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=500&q=80"
+                        alt="Manzanas Fuji"
+                    >
+                    <h3>
+                        Manzanas Fuji
+                    </h3>
+                    <p class="precio">
+                        $1.500
+                    </p>
+                    <a href="detalle-producto.html" class="boton">
+                        Ver producto
+                    </a>
+                </article>
+
+                <!-- Producto destacado 2 -->
+                <article class="producto">
+                    <img
+                        src="https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=500&q=80"
+                        alt="Naranjas Valencia"
+                    >
+                    <h3>
+                        Naranjas Valencia
+                    </h3>
+                    <p class="precio">
+                        $1.200
+                    </p>
+                    <a href="detalle-producto.html" class="boton">
+                        Ver producto
+                    </a>
+                </article>
+
+                <!-- Producto destacado 3 -->
+                <article class="producto">
+                    <img
+                        src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=500&q=80"
+                        alt="Plátanos Cavendish"
+                    >
+                    <h3>
+                        Plátanos Cavendish
+                    </h3>
+                    <p class="precio">
+                        $1.000
+                    </p>
+                    <a href="detalle-producto.html" class="boton">
+                        Ver producto
+                    </a>
+                </article>
+            </div>
+            <div class="contenedor-boton">
+                <a href="productos.html" class="boton">
+                    Ver todos los productos
+                </a>
+            </div>
+        </section>
+
+        <!-- ==================== INFORMACIÓN ==================== -->
+        <section class="informacion">
+            <h2>
+                ¿Por qué comprar en HuertoHogar?
+            </h2>
+            <div class="beneficios">
+                <article class="beneficio">
+                    <h3>
+                        🌱 Productos frescos
+                    </h3>
+                    <p>
+                        Seleccionamos productos de calidad para que
+                        recibas alimentos frescos en tu hogar.
+                    </p>
+                </article>
+
+                <article class="beneficio">
+                    <h3>
+                        🥕 Alimentación saludable
+                    </h3>
+                    <p>
+                        Encuentra frutas, verduras y productos orgánicos
+                        para complementar una alimentación saludable.
+                    </p>
+                </article>
+                <article class="beneficio">
+                    <h3>
+                        🏡 Directo a tu hogar
+                    </h3>
+                    <p>
+                        Compra fácilmente desde nuestra tienda y
+                        recibe tus productos donde los necesites.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-seccion">
+                <h3>
+                    HuertoHogar
+                </h3>
+                <p>
+                    Productos frescos y orgánicos para tu hogar.
+                </p>
+            </div>
+            <div class="footer-seccion">
+                <h3>
+                    Enlaces
+                </h3>
+                <ul>
+                    <li>
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="productos.html">Productos</a>
+                    </li>
+                    <li>
+                        <a href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="blogs.html">Blogs</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-seccion">
+                <h3>
+                    Cuenta
+                </h3>
+                <ul>
+                    <li>
+                        <a href="login.html">Iniciar sesión</a>
+                    </li>
+                    <li>
+                        <a href="registro.html">Registrarse</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; 2026 HuertoHogar. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
