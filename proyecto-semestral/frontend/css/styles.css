@@ -1,13 +1,10 @@
+@import url(stylesDetalle.css);
+@import url(stylesProducto.css);
 
-/* =========================================================
-   HUERTOHOGAR - ESTILOS GENERALES
-   ========================================================= */
-
-
-/* =========================================================
+/* -------------------------
    1. CONFIGURACIÓN GENERAL
-   ========================================================= */
-/*el * significa de manera general*/
+   -------------------------*/
+/*el * significa de manera general,todos los elementos HTML*/
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +18,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #F7F7F7;
     color: #2E8B57;
     /*Controla el espacio entre las líneas de texto.
@@ -30,47 +27,51 @@ body {
 }
 
 
-/* =========================================================
+/* ----------------
    2. TIPOGRAFÍA
-   ========================================================= */
-
+   ----------------*/
 h1,
 h2,
 h3 {
     font-family: 'Playfair Display', serif;
     color: #8B4513;
 }
+
 h1 {
     font-size: 3rem;
     line-height: 1.2;
 }
+
 h2 {
     font-size: 2.2rem;
     margin-bottom: 15px;
 }
+
 h3 {
     font-size: 1.4rem;
 }
+
 p {
-    color: #666666;
+    color: #727272;
 }
 
 
-/* =========================================================
+/* ----------
    3. ENLACES
-   ========================================================= */
+   ---------- */
 a {
     text-decoration: none;
     color: #2E8B57;
 }
+
 a:hover {
     color: #8B4513;
 }
 
 
-/* =========================================================
-   4. HEADER Y NAVEGACIÓN
-   ========================================================= */
+/* ------------------------
+   ---HEADER Y NAVEGACIÓN--
+   ------------------------ */
 
 header {
     background-color: #FFFFFF;
@@ -79,6 +80,7 @@ header {
     top: 0;
     z-index: 1000;
 }
+
 nav {
     max-width: 1200px;
     margin: 0 auto;
@@ -91,13 +93,13 @@ nav {
 
 
 /* Logo */
-
 .logo {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     font-weight: bold;
     color: #2E8B57;
 }
+
 .logo:hover {
     color: #8B4513;
 }
@@ -110,11 +112,13 @@ nav {
     align-items: center;
     gap: 25px;
 }
+
 .menu a {
     font-weight: 600;
     color: #333333;
     transition: color 0.3s ease;
 }
+
 .menu a:hover {
     color: #2E8B57;
 }
@@ -126,17 +130,17 @@ nav {
     color: #2E8B57;
 }
 
-/* =========================================================
+/* -----------------------
    5. CONTENEDOR PRINCIPAL
-   ========================================================= */
+   ----------------------- */
 main {
     width: 100%;
 }
 
 
-/* =========================================================
+/* -----------------------
    6. SECCIÓN Cuerpo
-   ========================================================= */
+   ----------------------- */
 
 .cuerpo {
     max-width: 1200px;
@@ -167,10 +171,13 @@ main {
 
 
 /* Imagen */
-.hero-imagen {
+.cuerpo-imagen {
     width: 100%;
+    line-height: 2;
+    font-style: italic;
 }
-.hero-imagen img {
+
+.cuerpo-imagen img {
     width: 100%;
     height: 420px;
     object-fit: cover;
@@ -179,9 +186,9 @@ main {
 }
 
 
-/* =========================================================
+/* -----------------------
    7. BOTONES
-   ========================================================= */
+   ----------------------- */
 .boton {
     display: inline-block;
     padding: 12px 24px;
@@ -194,6 +201,7 @@ main {
         background-color 0.3s ease,
         transform 0.2s ease;
 }
+
 .boton:hover {
     background-color: #8B4513;
     color: #FFFFFF;
@@ -202,9 +210,9 @@ main {
 }
 
 
-/* =========================================================
+/* -----------------------
    8. PRODUCTOS DESTACADOS
-   ========================================================= */
+   ----------------------- */
 
 .productos-destacados {
     max-width: 1200px;
@@ -212,6 +220,7 @@ main {
     padding: 70px 25px;
     text-align: center;
 }
+
 .descripcion-seccion {
     margin-bottom: 40px;
 }
@@ -237,6 +246,7 @@ main {
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
+
 .producto:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
@@ -275,16 +285,16 @@ main {
 }
 
 
-/* =========================================================
+/* -----------------------
    9. SECCIÓN INFORMACIÓN
-   ========================================================= */
+   ----------------------- */
 .informacion {
     background-color: #FFFFFF;
     padding: 70px 25px;
     text-align: center;
 }
 
-.informacion > h2 {
+.informacion>h2 {
     margin-bottom: 40px;
 }
 
@@ -306,17 +316,32 @@ main {
     background-color: #F7F7F7;
     border-top: 4px solid #2E8B57;
 }
+
 .beneficio h3 {
     margin-bottom: 12px;
 }
+
 .beneficio p {
     font-size: 0.95rem;
 }
 
+/* -----------------------
+   10. PÁGINA PRODUCTOS
+   ----------------------- */
+.titulo-productos {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 25px 30px;
+    text-align: center;
+}
 
-/* =========================================================
-   10. FOOTER
-   ========================================================= */
+.titulo-productos p {
+    margin-top: 10px;
+}
+
+/* -----------------------
+   --------FOOTER---------
+   ----------------------- */
 footer {
     background-color: #2E8B57;
     color: #FFFFFF;
@@ -352,6 +377,7 @@ footer {
 .footer-seccion ul {
     list-style: none;
 }
+
 .footer-seccion li {
     margin-bottom: 8px;
 }
@@ -362,6 +388,7 @@ footer {
     color: #FFFFFF;
     transition: color 0.3s ease;
 }
+
 .footer-seccion a:hover {
     color: #FFD700;
 }
@@ -373,15 +400,16 @@ footer {
     text-align: center;
     padding: 20px 25px;
 }
+
 .footer-bottom p {
     color: #FFFFFF;
     font-size: 0.9rem;
 }
 
 
-/* =========================================================
+/* -----------------------
    11. RESPONSIVE - TABLETS
-   ========================================================= */
+   ----------------------- */
 @media (max-width: 900px) {
     nav {
         flex-direction: column;
@@ -389,61 +417,80 @@ footer {
         padding-bottom: 15px;
         gap: 15px;
     }
+
     .menu {
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
     }
-    .hero {
+
+    .cuerpo {
         grid-template-columns: 1fr;
         text-align: center;
         padding-top: 50px;
     }
-    .hero-contenido {
+
+    .cuerpo-contenido {
         margin: 0 auto;
     }
+
     .lista-productos {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .beneficios {
         grid-template-columns: 1fr;
     }
+
     .footer-contenido {
         grid-template-columns: 1fr 1fr;
+    }
+
+    /*Para Productos*/
+    .lista-categorias {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 
-/* =========================================================
+/* -----------------------
    12. RESPONSIVE - CELULARES
-   ========================================================= */
+   ----------------------- */
 @media (max-width: 600px) {
     nav {
         padding-left: 15px;
         padding-right: 15px;
     }
+
     .logo {
         font-size: 1.5rem;
     }
+
     .menu {
         gap: 10px;
         font-size: 0.9rem;
     }
-    .hero {
+
+    .cuerpo {
         padding: 40px 15px;
     }
+
     h1 {
         font-size: 2.2rem;
     }
+
     h2 {
         font-size: 1.8rem;
     }
-    .hero-imagen img {
+
+    .cuerpo-imagen img {
         height: 280px;
     }
+
     .productos-destacados {
         padding: 50px 15px;
     }
+
     .lista-productos {
         grid-template-columns: 1fr;
     }
@@ -457,5 +504,8 @@ footer {
         gap: 30px;
         text-align: center;
     }
-}
 
+    .lista-categorias {
+        grid-template-columns: 1fr;
+    }
+}
