@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Administrativo - HuertoHogar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+  <img src="img/logo.png" alt="">
+  
+  <!-- Sidebar Lateral -->
+  <aside class="admin-sidebar">
+    <div class="admin-logo">HuertoHogar Admin</div>
+    <nav class="admin-nav">
+      <a href="admin-home.html" class="activo">Home</a>
+      <a href="admin-productos.html">Productos</a>
+      <a href="admin-usuarios.html">Usuarios</a>
+    </nav>
+    <div class="admin-logout">
+      <a href="../login.html">Cerrar Sesión</a>
+    </div>
+  </aside>
+
+  
+
+  <!-- Contenido Principal -->
+  <main class="admin-main">
+    <header class="admin-header">
+      <h2>Panel de Control</h2>
+      <span class="admin-user-info">Bienvenido, Administrator</span>
+    </header>
+
+    <section class="admin-contenedor">
+      <div class="admin-card">
+        <h3>Resumen General</h3>
+        <p>Selecciona una de las opciones del menú lateral para gestionar los productos o los usuarios de la plataforma.</p>
+      </div>
+
+      <div class="admin-grid-resumen">
+        <div class="admin-card">
+          <h4>Mantenedor de Productos</h4>
+          <p>Gestiona el inventario, precios y alertas de stock crítico.</p>
+          <a href="admin-productos.html" class="btn-admin" style="display:inline-block; margin-top:1rem;">Ir a Productos</a>
+        </div>
+        <div class="admin-card">
+          <h4>Mantenedor de Usuarios</h4>
+          <p>Administra los roles de acceso y datos de los usuarios.</p>
+          <a href="admin-usuarios.html" class="btn-admin" style="display:inline-block; margin-top:1rem;">Ir a Usuarios</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

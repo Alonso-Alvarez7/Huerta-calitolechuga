@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Usuarios - HuertoHogar Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+  <aside class="admin-sidebar">
+    <div class="admin-logo">HuertoHogar Admin</div>
+    <nav class="admin-nav">
+      <a href="admin-home.html">Dashboard</a>
+      <a href="admin-productos.html">Productos</a>
+      <a href="admin-usuarios.html" class="activo">Usuarios</a>
+    </nav>
+    <div class="admin-logout">
+      <a href="../login.html">Cerrar Sesión</a>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <h2>Gestión de Usuarios</h2>
+      <span class="admin-user-info">Administrador</span>
+    </header>
+
+    <section class="admin-contenedor">
+      <div class="admin-card">
+        <h3>Registrar Nuevo Usuario</h3>
+        <form id="formUsuario" novalidate>
+          <div class="admin-form-grid">
+            <div class="campo-form">
+              <label for="usrNombre">Nombre Completo:</label>
+              <input type="text" id="usrNombre" required>
+              <span class="mensaje-error" id="errorUsrNombre"></span>
+            </div>
+            <div class="campo-form">
+              <label for="usrEmail">Correo Electrónico:</label>
+              <input type="email" id="usrEmail" placeholder="@duoc.cl, @profesor.duoc.cl o @gmail.com" required>
+              <span class="mensaje-error" id="errorUsrEmail"></span>
+            </div>
+            <div class="campo-form">
+              <label for="usrRol">Rol asignado:</label>
+              <select id="usrRol">
+                <option value="Cliente">Cliente</option>
+                <option value="Vendedor">Vendedor</option>
+                <option value="Administrador">Administrador</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn-admin">Registrar Usuario</button>
+        </form>
+      </div>
+
+      <div class="admin-card">
+        <h3>Lista de Usuarios Registrados</h3>
+        <table class="admin-tabla">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Correo Electrónico</th>
+              <th>Rol</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaUsuariosBody">
+            <!-- Filas dinámicas generadas desde JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/admin-usuarios.js"></script>
+</body>
+</html>
