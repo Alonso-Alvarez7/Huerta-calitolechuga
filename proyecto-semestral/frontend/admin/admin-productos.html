@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Productos - HuertoHogar Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+  <aside class="admin-sidebar">
+    <div class="admin-logo">HuertoHogar Admin</div>
+    <nav class="admin-nav">
+      <a href="admin-home.html">Dashboard</a>
+      <a href="admin-productos.html" class="activo">Productos</a>
+      <a href="admin-usuarios.html">Usuarios</a>
+    </nav>
+    <div class="admin-logout">
+      <a href="../login.html">Cerrar Sesión</a>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <h2>Gestión de Productos</h2>
+      <span class="admin-user-info">Administrador</span>
+    </header>
+
+    <section class="admin-contenedor">
+      <!-- Formulario Agregar/Editar Producto -->
+      <div class="admin-card">
+        <h3 id="tituloFormProd">Agregar Producto</h3>
+        <form id="formProducto" novalidate>
+          <div class="admin-form-grid">
+            <div class="campo-form">
+              <label for="prodCodigo">Código (Ej. PROD001):</label>
+              <input type="text" id="prodCodigo" required>
+              <span class="mensaje-error" id="errorCodigo"></span>
+            </div>
+            <div class="campo-form">
+              <label for="prodNombre">Nombre del Producto:</label>
+              <input type="text" id="prodNombre" required>
+              <span class="mensaje-error" id="errorNombre"></span>
+            </div>
+            <div class="campo-form">
+              <label for="prodPrecio">Precio ($):</label>
+              <input type="number" id="prodPrecio" min="1" required>
+              <span class="mensaje-error" id="errorPrecio"></span>
+            </div>
+            <div class="campo-form">
+              <label for="prodStock">Stock Inicial:</label>
+              <input type="number" id="prodStock" min="0" required>
+              <span class="mensaje-error" id="errorStock"></span>
+            </div>
+          </div>
+          <button type="submit" class="btn-admin" id="btnGuardarProd">Guardar Producto</button>
+        </form>
+      </div>
+
+      <!-- Tabla de Listado de Productos -->
+      <div class="admin-card">
+        <h3>Lista de Productos</h3>
+        <table class="admin-tabla">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Estado Stock</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaProductosBody">
+            <!-- Filas dinámicas generadas desde JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/admin-productos.js"></script>
+</body>
+</html>
