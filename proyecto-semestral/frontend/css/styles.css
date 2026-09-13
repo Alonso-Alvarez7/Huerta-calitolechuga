@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 @import url(stylesDetalle.css);
 @import url(stylesProducto.css);
 @import url(admin.css);
+
 /* -------------------------
    1. CONFIGURACIÓN GENERAL
    -------------------------*/
@@ -18,13 +20,14 @@ html {
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #F7F7F7;
-    color: #2E8B57;
+    color: #333333;
     /*Controla el espacio entre las líneas de texto.
      para que no este tan junto, una linea de texto con otra */
     line-height: 1.6;
 }
+
 
 
 /* ----------------
@@ -52,7 +55,7 @@ h3 {
 }
 
 p {
-    color: #727272;
+    color: #666666;
 }
 
 
@@ -92,17 +95,6 @@ nav {
 }
 
 
-/* Logo */
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #2E8B57;
-}
-
-.logo:hover {
-    color: #8B4513;
-}
 
 /* Menú */
 .menu {
@@ -362,7 +354,7 @@ footer {
 
 /* Títulos del footer */
 .footer-seccion h3 {
-    color: #FFD700;
+    color: #F5E6C8;
     margin-bottom: 15px;
 }
 

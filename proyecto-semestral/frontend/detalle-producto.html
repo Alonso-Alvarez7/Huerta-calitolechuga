@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,15 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="img/logo.png">
 </head>
+
 <body>
     <!-- HEADER -->
     <header>
         <nav>
-            <a href="index.html" class="logo">HuertoHogar</a>
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" alt="HuertoHogar Logo" class="img-logo">
+                <span class="logo-texto">HuertoHogar</span>
+            </a>
 
             <ul class="menu">
                 <li><a href="index.html">Inicio</a></li>
@@ -34,8 +39,8 @@
 
             <!-- INFORMACIÓN DEL PRODUCTO -->
             <div class="detalle-informacion">
-                <h1>Manzanas Fuji</h1>
-                <p class="precio">$1.200 CLP/kg</p>
+                <h1 id="nombre-producto"></h1>
+                <p class="precio" id="precio-producto"></p>
                 <p>
                     Manzanas Fuji frescas, de excelente calidad y sabor dulce,
                     ideales para consumir directamente o utilizar en diferentes recetas.
@@ -109,5 +114,5 @@
         </div>
     </footer>
 </body>
-</html>
 
+</html>
