@@ -1,116 +1,337 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("Script de autenticación inicializado.");
+document.addEventListener("DOMContentLoaded", () => {
 
-    const formLogin = document.getElementById('formLogin');
-    const inputEmail = document.getElementById('loginEmail');
-    const inputPassword = document.getElementById('loginPassword');
+    console.log("Validaciones de registro inicializadas.");
 
-    const errorEmail = document.getElementById('errorEmail');
-    const errorPassword = document.getElementById('errorPassword');
-    const mensajeFeedback = document.getElementById('mensajeFeedback');
+    // Obtener formulario
+    const formRegistro =
+        document.getElementById("formRegistro");
 
-    // Regla de Negocio: Dominios oficiales permitidos
-    const dominiosPermitidos = ['@duoc.cl', '@profesor.duoc.cl', '@gmail.com'];
-
-    // Validaciones en tiempo real
-    if (inputEmail) inputEmail.addEventListener('input', validarEmail);
-    if (inputPassword) inputPassword.addEventListener('input', validarPassword);
-
-    // Procesar inicio de sesión al enviar el formulario
-    if (formLogin) {
-        formLogin.addEventListener('submit', (e) => {
-            e.preventDefault(); // Evita recargar la página
-
-            const esEmailValido = validarEmail();
-            const esPassValida = validarPassword();
-
-            if (esEmailValido && esPassValida) {
-                const emailVal = inputEmail.value.trim().toLowerCase();
-
-                // Determinación del Rol según regla del proyecto
-                let rolAsignado = 'Cliente';
-                if (emailVal.endsWith('@duoc.cl') || emailVal.endsWith('@profesor.duoc.cl')) {
-                    rolAsignado = 'Administrador';
-                }
-
-                // Estructura del usuario logueado en LocalStorage
-                const usuarioSesion = {
-                    email: emailVal,
-                    rol: rolAsignado,
-                    fechaIngreso: new Date().toISOString()
-                };
-
-                // Guardar la sesión activa
-                localStorage.setItem('hh_usuario_actual', JSON.stringify(usuarioSesion));
-
-                // Mensaje de éxito
-                if (mensajeFeedback) {
-                    mensajeFeedback.textContent = `¡Bienvenido! Sesión iniciada como [${rolAsignado}]. Redirigiendo...`;
-                    mensajeFeedback.style.display = 'block';
-                    mensajeFeedback.className = "feedback-container exito";
-                }
-
-                // Redirección condicionada por Rol
-                setTimeout(() => {
-                    if (rolAsignado === 'Administrador') {
-                        window.location.href = "admin/admin-home.html";
-                    } else {
-                        window.location.href = "index.html";
-                    }
-                }, 1500);
-
-            } else {
-                if (mensajeFeedback) {
-                    mensajeFeedback.textContent = "Por favor, corrige los errores señalados en el formulario.";
-                    mensajeFeedback.style.display = 'block';
-                    mensajeFeedback.className = "feedback-container error";
-                }
-            }
-        });
+    // Si no existe el formulario, detener el script
+    if (!formRegistro) {
+        return;
     }
 
-    // Función: Validar Correo Electrónico
+    // Obtener campos
+    const inputNombre =
+        document.getElementById("registroNombre");
+
+    const inputEmail =
+        document.getElementById("registroEmail");
+
+    const inputPassword =
+        document.getElementById("registroPassword");
+
+    const inputPasswordConfirm =
+        document.getElementById("registroPasswordConfirm");
+
+    // Obtener mensajes de error
+    const errorNombre =
+        document.getElementById("errorNombre");
+
+    const errorEmail =
+        document.getElementById("errorEmail");
+
+    const errorPassword =
+        document.getElementById("errorPassword");
+
+    const errorPasswordConfirm =
+        document.getElementById("errorPasswordConfirm");
+
+    const mensajeFeedback =
+        document.getElementById("mensajeFeedback");
+
+
+    // Dominios permitidos
+    const dominiosPermitidos = [
+        "@duoc.cl",
+        "@profesor.duoc.cl",
+        "@gmail.com"
+    ];
+
+
+    function validarNombre() {
+
+        const nombre =
+            inputNombre.value.trim();
+
+        if (nombre === "") {
+
+            errorNombre.textContent =
+                "El nombre es obligatorio.";
+
+            return false;
+        }
+
+        if (nombre.length < 2) {
+
+            errorNombre.textContent =
+                "El nombre debe tener al menos 2 caracteres.";
+
+            return false;
+        }
+
+        if (nombre.length > 100) {
+
+            errorNombre.textContent =
+                "El nombre no puede superar los 100 caracteres.";
+
+            return false;
+        }
+
+        errorNombre.textContent = "";
+
+        return true;
+    }
+
+
     function validarEmail() {
-        if (!inputEmail) return false;
-        const valor = inputEmail.value.trim().toLowerCase();
-        
-        if (valor === '') {
-            if (errorEmail) errorEmail.textContent = 'El correo electrónico es obligatorio.';
+
+        const email =
+            inputEmail.value
+                .trim()
+                .toLowerCase();
+
+        if (email === "") {
+
+            errorEmail.textContent =
+                "El correo electrónico es obligatorio.";
+
             return false;
         }
 
-        if (valor.length > 100) {
-            if (errorEmail) errorEmail.textContent = 'El correo no puede exceder los 100 caracteres.';
+        if (email.length > 100) {
+
+            errorEmail.textContent =
+                "El correo no puede superar los 100 caracteres.";
+
             return false;
         }
 
-        const dominioValido = dominiosPermitidos.some(dominio => valor.endsWith(dominio));
+        // Comprobar dominio
+        const dominioValido =
+            dominiosPermitidos.some(
+                dominio => email.endsWith(dominio)
+            );
 
         if (!dominioValido) {
-            if (errorEmail) errorEmail.textContent = 'Dominio no permitido. Debe usar @duoc.cl, @profesor.duoc.cl o @gmail.com';
+
+            errorEmail.textContent =
+                "Dominio no permitido. Usa @duoc.cl, @profesor.duoc.cl o @gmail.com.";
+
             return false;
         }
 
-        if (errorEmail) errorEmail.textContent = '';
+
+        // Obtener usuarios existentes
+        const usuarios =
+            JSON.parse(
+                localStorage.getItem("hh_usuarios")
+            ) || [];
+
+
+        // Comprobar si el correo ya existe
+        const correoExiste =
+            usuarios.some(
+                usuario =>
+                    usuario.email.toLowerCase() === email
+            );
+
+        if (correoExiste) {
+
+            errorEmail.textContent =
+                "Este correo ya está registrado.";
+
+            return false;
+        }
+
+        errorEmail.textContent = "";
+
         return true;
     }
 
-    // Función: Validar Contraseña
+
     function validarPassword() {
-        if (!inputPassword) return false;
-        const valor = inputPassword.value.trim();
 
-        if (valor === '') {
-            if (errorPassword) errorPassword.textContent = 'La contraseña es obligatoria.';
+        const password =
+            inputPassword.value.trim();
+
+        if (password === "") {
+
+            errorPassword.textContent =
+                "La contraseña es obligatoria.";
+
             return false;
         }
 
-        if (valor.length < 4 || valor.length > 10) {
-            if (errorPassword) errorPassword.textContent = 'La contraseña debe tener entre 4 y 10 caracteres.';
+        if (
+            password.length < 4 ||
+            password.length > 10
+        ) {
+
+            errorPassword.textContent =
+                "La contraseña debe tener entre 4 y 10 caracteres.";
+
             return false;
         }
 
-        if (errorPassword) errorPassword.textContent = '';
+        errorPassword.textContent = "";
+
         return true;
     }
+
+
+    function validarPasswordConfirm() {
+
+        const password =
+            inputPassword.value.trim();
+
+        const passwordConfirm =
+            inputPasswordConfirm.value.trim();
+
+
+        if (passwordConfirm === "") {
+
+            errorPasswordConfirm.textContent =
+                "Debes confirmar la contraseña.";
+
+            return false;
+        }
+
+
+        if (password !== passwordConfirm) {
+
+            errorPasswordConfirm.textContent =
+                "Las contraseñas no coinciden.";
+
+            return false;
+        }
+
+        errorPasswordConfirm.textContent = "";
+
+        return true;
+    }
+
+
+    inputNombre.addEventListener(
+        "input",
+        validarNombre
+    );
+
+    inputEmail.addEventListener(
+        "input",
+        validarEmail
+    );
+
+    inputPassword.addEventListener(
+        "input",
+        validarPassword
+    );
+
+    inputPasswordConfirm.addEventListener(
+        "input",
+        validarPasswordConfirm
+    );
+
+
+    formRegistro.addEventListener(
+        "submit",
+        function(event) {
+
+            // Evitar que la página se recargue
+            event.preventDefault();
+
+
+            // Ejecutar todas las validaciones
+            const nombreValido =
+                validarNombre();
+
+            const emailValido =
+                validarEmail();
+
+            const passwordValida =
+                validarPassword();
+
+            const confirmacionValida =
+                validarPasswordConfirm();
+
+
+            // Si existe algún error
+            if (
+                !nombreValido ||
+                !emailValido ||
+                !passwordValida ||
+                !confirmacionValida
+            ) {
+
+                mensajeFeedback.textContent =
+                    "Por favor, corrige los errores del formulario.";
+
+                mensajeFeedback.className =
+                    "mensaje-error";
+
+                return;
+            }
+
+
+            // Obtener usuarios existentes
+            let usuarios =
+                JSON.parse(
+                    localStorage.getItem("hh_usuarios")
+                ) || [];
+
+
+            // Crear nuevo usuario
+            const nuevoUsuario = {
+
+                nombre:
+                    inputNombre.value.trim(),
+
+                email:
+                    inputEmail.value
+                        .trim()
+                        .toLowerCase(),
+
+                password:
+                    inputPassword.value.trim(),
+
+                // Todo registro público comienza
+                // como Cliente
+                rol: "Cliente"
+            };
+
+
+            // Agregar usuario
+            usuarios.push(nuevoUsuario);
+
+
+            // Guardar usuarios
+            localStorage.setItem(
+                "hh_usuarios",
+                JSON.stringify(usuarios)
+            );
+
+
+            // Mostrar mensaje de éxito
+            mensajeFeedback.textContent =
+                "Cuenta creada correctamente. Redirigiendo al inicio de sesión...";
+
+            mensajeFeedback.className =
+                "feedback-container exito";
+
+
+            // Limpiar formulario
+            formRegistro.reset();
+
+
+            // Ir al login después de 1,5 segundos
+            setTimeout(() => {
+
+                window.location.href =
+                    "login.html";
+
+            }, 1500);
+        }
+    );
+
 });
+

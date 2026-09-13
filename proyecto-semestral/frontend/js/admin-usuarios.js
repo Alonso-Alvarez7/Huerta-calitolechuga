@@ -1,61 +1,234 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('formUsuario');
-    const tabla = document.getElementById('tablaUsuariosBody');
+document.addEventListener("DOMContentLoaded", () => {
 
-    let usuarios = JSON.parse(localStorage.getItem('hh_usuarios')) || [
-        { nombre: 'Admin Huerto', email: 'admin@duoc.cl', rol: 'Administrador' }
+    // Obtener formulario
+    const form =
+        document.getElementById("formUsuario");
+
+
+    // Obtener tabla
+    const tabla =
+        document.getElementById("tablaUsuariosBody");
+
+
+    // Dominios permitidos
+    const dominiosPermitidos = [
+        "@duoc.cl",
+        "@profesor.duoc.cl",
+        "@gmail.com"
     ];
 
-    const dominiosPermitidos = ['@duoc.cl', '@profesor.duoc.cl', '@gmail.com'];
 
+    // Obtener usuarios almacenados
+    let usuarios = JSON.parse(
+        localStorage.getItem("hh_usuarios")
+    ) || [];
+
+
+    // Guardar y actualizar tabla
     function guardarYRenderizar() {
-        localStorage.setItem('hh_usuarios', JSON.stringify(usuarios));
+
+        localStorage.setItem(
+            "hh_usuarios",
+            JSON.stringify(usuarios)
+        );
+
         renderizarTabla();
     }
 
+
+    // Mostrar usuarios
     function renderizarTabla() {
-        tabla.innerHTML = '';
-        usuarios.forEach((u, index) => {
-            const tr = document.createElement('tr');
+
+        tabla.innerHTML = "";
+
+
+        usuarios.forEach((usuario, index) => {
+
+            const tr =
+                document.createElement("tr");
+
+
             tr.innerHTML = `
-                <td>${u.nombre}</td>
-                <td>${u.email}</td>
-                <td><strong>${u.rol}</strong></td>
+
                 <td>
-                    <button class="btn-eliminar" onclick="eliminarUsuario(${index})">Eliminar</button>
+                    ${usuario.nombre}
                 </td>
+
+                <td>
+                    ${usuario.email}
+                </td>
+
+                <td>
+                    <strong>
+                        ${usuario.rol}
+                    </strong>
+                </td>
+
+                <td>
+                    <button
+                        class="btn-eliminar"
+                        onclick="eliminarUsuario(${index})">
+
+                        Eliminar
+
+                    </button>
+                </td>
+
             `;
+
+
             tabla.appendChild(tr);
         });
     }
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
 
-        const nombre = document.getElementById('usrNombre').value.trim();
-        const email = document.getElementById('usrEmail').value.trim();
-        const rol = document.getElementById('usrRol').value;
-        const errorEmail = document.getElementById('errorUsrEmail');
+    // Crear usuario
+    form.addEventListener("submit", function(event) {
 
-        const dominioValido = dominiosPermitidos.some(d => email.toLowerCase().endsWith(d));
+        event.preventDefault();
 
-        if (!dominioValido) {
-            errorEmail.textContent = 'Correo no permitido (@duoc.cl, @profesor.duoc.cl o @gmail.com).';
+
+        // Obtener datos
+        const nombre =
+            document
+                .getElementById("usrNombre")
+                .value
+                .trim();
+
+
+        const email =
+            document
+                .getElementById("usrEmail")
+                .value
+                .trim()
+                .toLowerCase();
+
+
+        const rol =
+            document
+                .getElementById("usrRol")
+                .value;
+
+
+        const errorEmail =
+            document.getElementById("errorUsrEmail");
+
+
+        // Validar nombre
+        if (nombre === "") {
+
+            alert(
+                "Debes ingresar el nombre del usuario."
+            );
+
             return;
         }
 
-        usuarios.push({ nombre, email, rol });
+
+        // Validar correo
+        if (email === "") {
+
+            errorEmail.textContent =
+                "Debes ingresar un correo.";
+
+            return;
+        }
+
+
+        // Validar dominio
+        const dominioValido =
+            dominiosPermitidos.some(
+                dominio =>
+                    email.endsWith(dominio)
+            );
+
+
+        if (!dominioValido) {
+
+            errorEmail.textContent =
+                "Correo no permitido. Usa @duoc.cl, @profesor.duoc.cl o @gmail.com.";
+
+            return;
+        }
+
+
+        // Verificar correo duplicado
+        const usuarioExiste =
+            usuarios.some(
+                usuario =>
+                    usuario.email.toLowerCase() === email
+            );
+
+
+        if (usuarioExiste) {
+
+            errorEmail.textContent =
+                "El correo ya está registrado.";
+
+            return;
+        }
+
+
+        // Contraseña provisoria
+        const passwordProvisoria = "1234";
+
+
+        // Crear nuevo usuario
+        const nuevoUsuario = {
+
+            nombre: nombre,
+
+            email: email,
+
+            password: passwordProvisoria,
+
+            rol: rol
+        };
+
+
+        // Agregar usuario
+        usuarios.push(nuevoUsuario);
+
+
+        // Guardar
         guardarYRenderizar();
+
+
+        // Limpiar formulario
         form.reset();
-        errorEmail.textContent = '';
+
+
+        // Limpiar error
+        errorEmail.textContent = "";
+
+
+        // Informar contraseña provisoria
+        alert(
+            "Usuario creado correctamente.\n\n" +
+            "Contraseña provisoria: 1234"
+        );
+
     });
 
-    window.eliminarUsuario = (index) => {
-        if (confirm('¿Deseas eliminar este usuario?')) {
+
+    // Eliminar usuario
+    window.eliminarUsuario = function(index) {
+
+        if (
+            confirm(
+                "¿Deseas eliminar este usuario?"
+            )
+        ) {
+
             usuarios.splice(index, 1);
+
             guardarYRenderizar();
         }
+
     };
 
+
+    // Mostrar usuarios al cargar
     renderizarTabla();
+
 });
