@@ -54,26 +54,6 @@ body.body-publico {
   align-items: center;
 }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-}
-
-.img-logo {
-  max-height: 45px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
-
-.logo-texto {
-  font-family: var(--fuente-titulos);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--acento-verde);
-}
 
 .nav-principal {
   display: flex;
@@ -495,6 +475,10 @@ body.body-publico {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--acento-verde, #2E8B57);
+}
+
+.logo-link:hover .logo-texto {
+    color: #8B4513;
 }
 
 .nav-principal {
