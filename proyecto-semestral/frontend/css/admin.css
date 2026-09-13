@@ -443,3 +443,222 @@ body.body-publico {
   text-align: center;
   font-size: 0.85rem;
 }
+
+
+/*LOGIN, pagina publica e inicio de sesion*/
+
+
+body.body-publico {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header principal y navegación */
+.header-principal {
+  background-color: var(--blanco, #ffffff);
+  border-bottom: 2px solid var(--borde-color, #e2e8f0);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.img-logo {
+  max-height: 45px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-texto {
+  font-family: var(--fuente-titulos, Georgia, serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--acento-verde, #2E8B57);
+}
+
+.nav-principal {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-principal a {
+  text-decoration: none;
+  color: var(--texto-principal, #2C3E50);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-principal a:hover {
+  color: var(--acento-verde, #2E8B57);
+}
+
+.header-acciones {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.btn-login {
+  text-decoration: none;
+  color: var(--acento-verde, #2E8B57);
+  border: 1px solid var(--acento-verde, #2E8B57);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radio-borde, 8px);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.btn-login:hover,
+.btn-login.activo {
+  background-color: var(--acento-verde, #2E8B57);
+  color: var(--blanco, #ffffff);
+}
+
+.btn-registro {
+  text-decoration: none;
+  color: var(--blanco, #ffffff);
+  background-color: #1E293B;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radio-borde, 8px);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-registro:hover {
+  background-color: #334155;
+}
+
+/* Contenedor centralizado para la tarjeta */
+.seccion-login {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 1rem;
+  width: 100%;
+}
+
+.card-auth {
+  background-color: var(--blanco, #ffffff);
+  border-radius: var(--radio-borde, 8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  border-top: 5px solid var(--acento-verde, #2E8B57);
+  box-sizing: border-box;
+}
+
+.encabezado-auth {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.encabezado-auth h2 {
+  font-family: var(--fuente-titulos, Georgia, serif);
+  color: var(--texto-principal, #2C3E50);
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.encabezado-auth p {
+  color: var(--texto-secundario, #7F8C8D);
+  font-size: 0.88rem;
+}
+
+/* Campos del Formulario */
+.campo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+  width: 100%;
+}
+
+.campo-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--texto-principal, #2C3E50);
+}
+
+.campo-form input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--borde-color, #E0E0E0);
+  border-radius: 6px;
+  font-family: var(--fuente-cuerpo, sans-serif);
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.campo-form input:focus {
+  outline: none;
+  border-color: var(--acento-verde, #2E8B57);
+}
+
+/* Botón principal del formulario */
+.btn-primario {
+  background-color: var(--acento-verde, #2E8B57);
+  color: var(--blanco, #ffffff);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--fuente-cuerpo, sans-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radio-borde, 8px);
+  cursor: pointer;
+  width: 100%;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primario:hover {
+  background-color: var(--acento-hover, #236B43);
+}
+
+.mensaje-error {
+  color: var(--error, #E74C3C);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 0.2rem;
+  min-height: 1.2rem;
+}
+
+/* Footer de la página pública */
+.footer-principal {
+  background-color: #1E293B;
+  color: var(--blanco, #ffffff);
+  padding: 1.2rem 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+.footer-contenido {
+  text-align: center;
+  font-size: 0.85rem;
+}
