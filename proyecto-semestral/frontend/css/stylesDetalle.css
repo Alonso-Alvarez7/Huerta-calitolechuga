@@ -51,6 +51,14 @@
     border-radius: 6px;
 }
 
+/*Stock*/
+.mensaje-stock {
+    margin-top: 8px;
+    color: #c0392b;
+    font-size: 14px;
+    font-weight: bold;
+}
+
 /* Información adicional */
 .informacion-producto {
     max-width: 1100px;

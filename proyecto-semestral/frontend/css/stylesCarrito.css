@@ -1,0 +1,332 @@
+/* ==========================================
+   CARRITO DE COMPRAS - HUERTOHOGAR
+   ========================================== */
+
+/* Contenedor principal */
+.carrito {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Título */
+.carrito h1 {
+    text-align: center;
+    color: #2E8B57;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    margin-bottom: 35px;
+}
+
+
+/* ==========================================
+   LISTA DE PRODUCTOS
+   ========================================== */
+
+#carrito-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Producto dentro del carrito */
+.item-carrito {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.item-carrito:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ==========================================
+   IMAGEN DEL PRODUCTO
+   ========================================== */
+
+.imagen-carrito {
+    width: 120px;
+    height: 120px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+
+/* ==========================================
+   INFORMACIÓN DEL PRODUCTO
+   ========================================== */
+
+.informacion-carrito {
+    flex: 1;
+}
+
+.informacion-carrito h3 {
+    color: #2E8B57;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin: 0 0 10px;
+}
+
+.informacion-carrito p {
+    margin: 5px 0;
+    color: #555555;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* ==========================================
+   CONTROL DE CANTIDAD
+   ========================================== */
+
+.cantidad-carrito {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cantidad-carrito button {
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #2E8B57;
+    color: #FFFFFF;
+
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+}
+
+.cantidad-carrito button:hover {
+    background-color: #8B4513;
+    transform: scale(1.05);
+}
+
+.cantidad-carrito span {
+    min-width: 30px;
+
+    text-align: center;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+
+/* ==========================================
+   BOTÓN ELIMINAR
+   ========================================== */
+
+.boton-eliminar {
+    border: none;
+    background: none;
+
+    color: #B22222;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.2s ease;
+}
+
+.boton-eliminar:hover {
+    color: #8B0000;
+    transform: scale(1.05);
+}
+
+
+/* ==========================================
+   RESUMEN DEL CARRITO
+   ========================================== */
+
+#carrito-resumen {
+    margin-top: 35px;
+
+    padding: 25px;
+
+    background-color: #FFFFFF;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+
+    text-align: right;
+}
+
+#carrito-resumen p {
+    margin: 8px 0;
+
+    color: #555555;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+#carrito-resumen strong {
+    color: #2E8B57;
+}
+
+#carrito-total {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   BOTÓN VACIAR CARRITO
+   ========================================== */
+
+#vaciar-carrito {
+    margin-top: 15px;
+
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #B22222;
+    color: #FFFFFF;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+}
+
+#vaciar-carrito:hover {
+    background-color: #8B0000;
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   CARRITO VACÍO
+   ========================================== */
+
+.carrito-vacio {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background-color: #FFFFFF;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.carrito-vacio h2 {
+    color: #2E8B57;
+
+    font-family: 'Playfair Display', serif;
+
+    margin-bottom: 10px;
+}
+
+.carrito-vacio p {
+    color: #666666;
+
+    font-family: 'Montserrat', sans-serif;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================
+   DISEÑO RESPONSIVE
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    .item-carrito {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .imagen-carrito {
+        width: 90px;
+        height: 90px;
+    }
+
+    .informacion-carrito {
+        min-width: calc(100% - 110px);
+    }
+
+    .cantidad-carrito {
+        margin-left: auto;
+    }
+
+    .boton-eliminar {
+        margin-left: 10px;
+    }
+
+    #carrito-resumen {
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .carrito {
+        margin: 25px auto;
+        padding: 0 12px;
+    }
+
+    .carrito h1 {
+        font-size: 2rem;
+    }
+
+    .item-carrito {
+        padding: 15px;
+    }
+
+    .imagen-carrito {
+        width: 75px;
+        height: 75px;
+    }
+
+    .informacion-carrito h3 {
+        font-size: 1.2rem;
+    }
+
+    .cantidad-carrito {
+        width: 100%;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .boton-eliminar {
+        width: 100%;
+        margin: 5px 0 0;
+    }
+}
