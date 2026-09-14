@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - HuertoHogar</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="header-principal">
+        <div class="header-contenido">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" alt="Logo HuertoHogar" class="img-logo">
+                <span class="logo-texto">
+                    HuertoHogar
+                </span>
+            </a>
+
+            <nav class="nav-principal">
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contacto.html" class="activo">Contacto</a>
+            </nav>
+
+            <div class="header-acciones">
+                <a href="login.html" class="btn-login">Ingresar</a>
+                <a href="registro.html" class="btn-registro">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="seccion-contacto">
+            <div class="encabezado-seccion">
+                <h1>
+                    Contáctanos
+                </h1>
+                <p>
+                    ¿Tienes alguna consulta?
+                    Escríbenos y estaremos encantados de ayudarte.
+                </p>
+            </div>
+
+            <div class="contenedor-contacto">
+                <section class="informacion-contacto">
+                    <h3>
+                        Estamos aquí para ayudarte
+                    </h3>
+                    <p>
+                        En HuertoHogar queremos mantener una
+                        comunicación cercana con nuestros clientes.
+                    </p>
+                    <div class="dato-contacto">
+                        <h3>
+                            Correo electrónico
+                        </h3>
+                        <p>
+                            contacto@huertohogar.cl
+                        </p>
+                    </div>
+                    <div class="dato-contacto">
+                        <h3>
+                            Teléfono
+                        </h3>
+                        <p>
+                            +56 9 1234 5678
+                        </p>
+                    </div>
+                    <div class="dato-contacto">
+                        <h3>
+                            Horario de atención
+                        </h3>
+                        <p>
+                            Lunes a viernes
+                            <br>
+                            09:00 a 18:00 horas
+                        </p>
+                    </div>
+                    <div class="dato-contacto">
+                        <h3>
+                            Ubicación
+                        </h3>
+                        <p>
+                            Santiago, Chile
+                        </p>
+                    </div>
+                </section>
+                <section class="formulario-contacto">
+                    <h2>
+                        Envíanos un mensaje
+                    </h2>
+                    <form id="formContacto">
+                        <div class="campo-form">
+                            <label for="contactoNombre">
+                                Nombre completo
+                            </label>
+                            <input
+                                type="text"
+                                id="contactoNombre"
+                                name="nombre"
+                                placeholder="Ingresa tu nombre"
+                                maxlength="100"
+                                required
+                            >
+                            <p
+                                id="errorContactoNombre"
+                                class="mensaje-error">
+                            </p>
+                        </div>
+                        <div class="campo-form">
+                            <label for="contactoEmail">
+                                Correo electrónico
+                            </label>
+                            <input
+                                type="email"
+                                id="contactoEmail"
+                                name="email"
+                                placeholder="ejemplo@correo.com"
+                                maxlength="100"
+                                required
+                            >
+                            <p
+                                id="errorContactoEmail"
+                                class="mensaje-error">
+                            </p>
+                        </div>
+                        <div class="campo-form">
+                            <label for="contactoAsunto">
+                                Asunto
+                            </label>
+                            <input
+                                type="text"
+                                id="contactoAsunto"
+                                name="asunto"
+                                placeholder="¿En qué podemos ayudarte?"
+                                maxlength="100"
+                                required
+                            >
+                            <p
+                                id="errorContactoAsunto"
+                                class="mensaje-error">
+                            </p>
+                        </div>
+                        <div class="campo-form">
+                            <label for="contactoMensaje">
+                                Mensaje
+                            </label>
+                            <textarea
+                                id="contactoMensaje"
+                                name="mensaje"
+                                rows="6"
+                                maxlength="500"
+                                placeholder="Escribe tu mensaje..."
+                                required>
+                            </textarea>
+                            <p
+                                id="errorContactoMensaje"
+                                class="mensaje-error">
+                            </p>
+                        </div>
+                        <p
+                            id="mensajeContacto"
+                            class="mensaje-error">
+                        </p>
+                        <button
+                            type="submit"
+                            class="btn-primario">
+
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-principal">
+        <div class="footer-contenido">
+            <p>&copy; 2026 HuertoHogar.Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/validaciones-contacto.js"></script>
+
+</body>
+</html>
