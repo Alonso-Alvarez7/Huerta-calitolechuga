@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs y Noticias | HuertoHogar</title>
+    <!-- CSS General del proyecto -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- CSS propio de la sección de Blogs -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+</head>
+
+<body>
+    <!-- ==================== HEADER ==================== -->
+    <header>
+        <nav>
+            <!-- Logo -->
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" alt="HuertoHogar Logo" class="img-logo">
+                <span class="logo-texto">HuertoHogar</span>
+            </a>
+            <!-- Menú de navegación -->
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blogs.html" class="activo">Blogs</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Iniciar sesión</a></li>
+                <li><a href="registro.html">Registrarse</a></li>
+                <li>
+                    <a href="carrito-compras.html" id="carrito-link">
+                        🛒 Carrito
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+    <main>
+        <!-- Encabezado del Blog -->
+        <section class="blog-hero">
+            <div class="blog-hero-content">
+                <h1>Blog & Noticias del Campo</h1>
+                <p>Descubre consejos de alimentación saludable, los secretos nutricionales de nuestras frutas y verduras
+                    orgánicas, y el impacto de apoyar a los agricultores locales en Chile.</p>
+            </div>
+        </section>
+
+        <!-- Contenido principal de Blogs -->
+        <section class="blog-container">
+            <!-- Listado de Artículos / Noticias -->
+            <div class="blog-grid">
+
+                <!-- Artículo 1: Manzanas Fuji -->
+                <article class="blog-card">
+                    <div class="blog-img-box">
+                        <img src="img/ManzanasFuji.png" alt="Manzanas Fuji del Valle del Maule">
+                        <span class="blog-category">Frutas Frescas</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 10 Septiembre, 2026</span>
+                            <span>✍️ Nutrición HuertoHogar</span>
+                        </div>
+                        <h2>Beneficios de las Manzanas Fuji del Valle del Maule en tu alimentación diaria</h2>
+                        <p>Las Manzanas Fuji destacan por su textura crujiente y dulce sabor equilibrado. Conoce cómo
+                            sus antioxidantes y fibra ayudan a mejorar la digestión y aportan energía natural a tu día a
+                            día.</p>
+                        <a href="#" class="blog-btn">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 2: Zanahorias Orgánicas & Espinacas -->
+                <article class="blog-card">
+                    <div class="blog-img-box">
+                        <img src="img/ZanahoriasOrgánicas.png" alt="Zanahorias y Espinacas Orgánicas">
+                        <span class="blog-category">Verduras Orgánicas</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 08 Septiembre, 2026</span>
+                            <span>✍️ Agronomía Sostenible</span>
+                        </div>
+                        <h2>Poder Verde: Cómo las Zanahorias de O'Higgins y Espinacas transforman tus batidos</h2>
+                        <p>Cultivadas sin pesticidas ni químicos, las verduras orgánicas garantizan el máximo contenido
+                            de Vitamina A y Hierro. Descubre dos recetas sencillas de batidos detox para potenciar tu
+                            inmunidad.</p>
+                        <a href="#" class="blog-btn">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 3: Naranjas Valencia & Plátanos Cavendish -->
+                <article class="blog-card">
+                    <div class="blog-img-box">
+                        <img src="img/NaranjasValencia.png" alt="Cítricos y Plátanos frescos">
+                        <span class="blog-category">Vida Saludable</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 05 Septiembre, 2026</span>
+                            <span>✍️ Equipo HuertoHogar</span>
+                        </div>
+                        <h2>Desayunos con Naranjas Valencia y Plátanos Cavendish para un impulso energético</h2>
+                        <p>Combinar la vitamina C de las Naranjas Valencia con el potasio de los Plátanos Cavendish es
+                            la clave de un desayuno nutritivo. Te contamos cómo aprovechar al máximo sus nutrientes
+                            naturales.</p>
+                        <a href="#" class="blog-btn">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 4: Pimientos Tricolores y Miel Orgánica -->
+                <article class="blog-card">
+                    <div class="blog-img-box">
+                        <img src="img/PimientosTricolores.png" alt="Pimientos Tricolores y Miel Orgánica">
+                        <span class="blog-category">Productos Orgánicos</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 01 Septiembre, 2026</span>
+                            <span>✍️ Apicultura & Cocina</span>
+                        </div>
+                        <h2>El valor de lo local: Miel Orgánica pura y Pimientos Tricolores directos del productor</h2>
+                        <p>Apoyar a apicultores y agricultores locales en regiones como Valparaíso y Concepción no solo
+                            garantiza frescura en tu mesa, sino que también reduce la huella de carbono y apoya la
+                            sostenibilidad.</p>
+                        <a href="#" class="blog-btn">Leer más →</a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Barra Lateral (Sidebar) -->
+            <aside class="blog-sidebar">
+                <!-- Buscador -->
+                <div class="sidebar-widget">
+                    <h3>Buscar en el Blog</h3>
+                    <form class="search-form" action="#">
+                        <input type="text" placeholder="Ej: Manzanas, Recetas..." required>
+                        <button type="submit">🔍</button>
+                    </form>
+                </div>
+
+                <!-- Categorías -->
+                <div class="sidebar-widget">
+                    <h3>Categorías</h3>
+                    <ul class="widget-list">
+                        <li><a href="#">Frutas Frescas <span>(3)</span></a></li>
+                        <li><a href="#">Verduras Orgánicas <span>(3)</span></a></li>
+                        <li><a href="#">Productos Orgánicos <span>(2)</span></a></li>
+                        <li><a href="#">Recetas & Salud <span>(4)</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Suscripción al Newsletter -->
+                <div class="sidebar-widget newsletter-widget">
+                    <h3>¡Únete a la Comunidad!</h3>
+                    <p>Recibe recetas semanales, consejos de cultivo y ofertas exclusivas en tus frutas y verduras
+                        favoritas.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="boton">Suscribirme</button>
+                    </form>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-seccion">
+                <h3>HuertoHogar</h3>
+                <p>Productos frescos y orgánicos para tu hogar.</p>
+            </div>
+            <div class="footer-seccion">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="blogs.html">Blogs</a></li>
+                </ul>
+            </div>
+            <div class="footer-seccion">
+                <h3>Cuenta</h3>
+                <ul>
+                    <li><a href="login.html">Iniciar sesión</a></li>
+                    <li><a href="registro.html">Registrarse</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 HuertoHogar. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
