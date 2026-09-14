@@ -148,6 +148,6 @@ window.addEventListener("load", function () {
 
         mapa.fitBounds(limitesChile);
 
-    }, 300);
+    }, 500);
 
 });
