@@ -3,16 +3,19 @@
    ======================= */
 
 // Crear mapa
-const mapa = L.map("mapa-sucursales").setView(
-    [-33.45, -70.65],
-    5
-);
+const mapa = L.map("mapa-sucursales", {
+    zoomControl: true
+});
 
 
-// Agregar mapa de OpenStreetMap
+// =======================
+// MAPA DE OPENSTREETMAP
+// =======================
+
 L.tileLayer(
     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
     {
+        maxZoom: 19,
         attribution:
             '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }
@@ -76,6 +79,20 @@ const sucursales = [
 
 
 // =======================
+// LÍMITES DE CHILE
+// =======================
+
+const limitesChile = L.latLngBounds(
+    [-56, -76],
+    [-17, -66]
+);
+
+
+// Mostrar Chile completo
+mapa.fitBounds(limitesChile);
+
+
+// =======================
 // CREAR MARCADORES
 // =======================
 
@@ -87,12 +104,50 @@ sucursales.forEach(function (sucursal) {
     ]).addTo(mapa);
 
 
-    marcador.bindPopup(
-        `
-        <strong>HuertoHogar</strong><br>
-        <strong>${sucursal.nombre}</strong><br>
-        ${sucursal.region}
-        `
-    );
+    marcador.bindPopup(`
+        <div class="popup-sucursal">
+            <strong>HuertoHogar</strong>
+            <br>
+            <strong>${sucursal.nombre}</strong>
+            <br>
+            ${sucursal.region}
+        </div>
+    `);
+
+
+    // Al hacer clic en el marcador
+    marcador.on("click", function () {
+
+        mapa.flyTo(
+            [
+                sucursal.latitud,
+                sucursal.longitud
+            ],
+            10,
+            {
+                duration: 1
+            }
+        );
+
+        marcador.openPopup();
+    });
+
+});
+
+
+// =======================
+// CORREGIR TAMAÑO DEL MAPA
+// =======================
+
+// Esperar a que la página termine de cargar
+window.addEventListener("load", function () {
+
+    setTimeout(function () {
+
+        mapa.invalidateSize();
+
+        mapa.fitBounds(limitesChile);
+
+    }, 500);
 
 });
