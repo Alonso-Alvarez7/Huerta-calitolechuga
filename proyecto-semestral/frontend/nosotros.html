@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | HuertoHogar</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/stylesNosotros.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <!-- Leaflet -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIINfQ3d6g8pN8M9K0Q2F0D0s3T6J8x0="
+        crossorigin="">
+</head>
+
+<body>
+    <!-- ==================== HEADER ==================== -->
+    <header>
+        <nav>
+            <!-- Logo -->
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png"
+                    alt="HuertoHogar Logo"
+                    class="img-logo">
+
+                <span class="logo-texto">
+                    HuertoHogar
+                </span>
+            </a>
+            <!-- Menú de navegación -->
+            <ul class="menu">
+                <li>
+                    <a href="index.html">
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="productos.html">
+                        Productos
+                    </a>
+                </li>
+                <li>
+                    <a href="nosotros.html">
+                        Nosotros
+                    </a>
+                </li>
+                <li>
+                    <a href="blogs.html">
+                        Blogs
+                    </a>
+                </li>
+                <li>
+                    <a href="contacto.html">
+                        Contacto
+                    </a>
+                </li>
+                <div></div>
+                <li>
+                    <a href="login.html">
+                        Iniciar sesión
+                    </a>
+                </li>
+                <li>
+                    <a href="registro.html">
+                        Registrarse
+                    </a>
+                </li>
+                <li>
+                    <a href="carrito-compras.html" id="carrito-link">
+                        🛒 Carrito
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+    <main>
+        <!-- ==================== PRESENTACIÓN ==================== -->
+        <section class="nosotros-presentacion">
+            <div class="nosotros-contenido">
+                <h1>
+                    Sobre HuertoHogar
+                </h1>
+                <p>
+                    En HuertoHogar buscamos acercar productos frescos,
+                    frutas, verduras y alimentos orgánicos a las familias
+                    de Chile.
+                </p>
+                <p>
+                    Trabajamos para conectar a nuestros clientes con
+                    productos de calidad, promoviendo una alimentación
+                    saludable y el apoyo a productores locales.
+                </p>
+            </div>
+            <div class="nosotros-imagen">
+                <img src="img/frutaEslogan.png"
+                    alt="Productos frescos de HuertoHogar">
+
+            </div>
+        </section>
+
+        <!-- ==================== NUESTRA MISIÓN ==================== -->
+        <section class="mision">
+            <div class="mision-contenido">
+                <h2>
+                    Nuestra misión
+                </h2>
+                <p>
+                    Ofrecer productos frescos y de calidad de manera
+                    accesible, facilitando que las personas puedan
+                    incorporar alimentos saludables a su vida diaria.
+                </p>
+            </div>
+            <div class="valores">
+                <article class="valor">
+                    <h3>
+                        🌱 Calidad
+                    </h3>
+                    <p>
+                        Seleccionamos productos pensando en su frescura
+                        y calidad.
+                    </p>
+                </article>
+                <article class="valor">
+                    <h3>
+                        🤝 Compromiso
+                    </h3>
+                    <p>
+                        Buscamos entregar una experiencia confiable
+                        a nuestros clientes.
+                    </p>
+                </article>
+                <article class="valor">
+                    <h3>
+                        🌎 Sostenibilidad
+                    </h3>
+                    <p>
+                        Promovemos prácticas responsables y el consumo
+                        de productos locales.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ==================== SUCURSALES ==================== -->
+        <section class="sucursales">
+            <div class="sucursales-contenido">
+                <h2>
+                    Nuestras sucursales
+                </h2>
+                <p>
+                    Contamos con sucursales ubicadas en distintas
+                    ciudades de Chile.
+                </p>
+            </div>
+
+            <!-- Mapa -->
+            <div id="mapa-sucursales"></div>
+
+            <!-- Lista de sucursales -->
+            <div class="lista-sucursales">
+                <article class="sucursal">
+                    <h3>📍 Santiago</h3>
+                    <p>Santiago, Región Metropolitana</p>
+                </article>
+                <article class="sucursal">
+                    <h3>📍 Valparaíso</h3>
+                    <p>Valparaíso, Región de Valparaíso</p>
+                </article>
+                <article class="sucursal">
+                    <h3>📍 Viña del Mar</h3>
+                    <p>Viña del Mar, Región de Valparaíso</p>
+                </article>
+                <article class="sucursal">
+                    <h3>📍 Concepción</h3>
+                    <p>Concepción, Región del Biobío</p>
+                </article>
+                <article class="sucursal">
+                    <h3>📍 Nacimiento</h3>
+                    <p>Nacimiento, Región del Biobío</p>
+                </article>
+                <article class="sucursal">
+                    <h3>📍 Villarrica</h3>
+                    <p>Villarrica, Región de La Araucanía</p>
+                </article>
+                <article class="sucursal">
+                    <h3>📍 Puerto Montt</h3>
+                    <p>Puerto Montt, Región de Los Lagos</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-seccion">
+                <h3>
+                    HuertoHogar
+                </h3>
+
+                <p>
+                    Productos frescos y orgánicos para tu hogar.
+                </p>
+            </div>
+
+            <div class="footer-seccion">
+                <h3>
+                    Enlaces
+                </h3>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="productos.html">
+                            Productos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="nosotros.html">
+                            Nosotros
+                        </a>
+                    </li>
+                    <li>
+                        <a href="blogs.html">
+                            Blogs
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-seccion">
+                <h3>
+                    Cuenta
+                </h3>
+                <ul>
+                    <li>
+                        <a href="login.html">
+                            Iniciar sesión
+                        </a>
+                    </li>
+                    <li>
+                        <a href="registro.html">
+                            Registrarse
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; 2026 HuertoHogar. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==================== LEAFLET ==================== -->
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin="">
+    </script>
+    <script src="js/nosotros.js"></script>
+</body>
+</html>
