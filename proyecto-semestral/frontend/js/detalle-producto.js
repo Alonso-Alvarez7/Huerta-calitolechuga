@@ -412,7 +412,108 @@ if (producto) {
         mensaje.textContent = "";
     });
 
+    // ==========================================
+    // AGREGAR AL CARRITO
+    // ==========================================
 
+    const botonCarrito =
+        document.getElementById("agregar-carrito");
+
+
+    botonCarrito.addEventListener("click", function (evento) {
+
+        evento.preventDefault();
+
+
+        const cantidadSeleccionada =
+            parseInt(cantidad.value);
+
+
+        // Validar cantidad
+        if (
+            isNaN(cantidadSeleccionada) ||
+            cantidadSeleccionada < 1 ||
+            cantidadSeleccionada > producto.stock
+        ) {
+
+            return;
+
+        }
+
+
+        // Obtener carrito existente
+        let carrito =
+            JSON.parse(localStorage.getItem("carrito")) || [];
+
+
+        // Buscar si el producto ya existe
+        const productoExistente =
+            carrito.find(item => item.id === codigo);
+
+
+        if (productoExistente) {
+
+            const cantidadDisponible =
+                producto.stock - productoExistente.cantidad;
+
+
+            if (cantidadSeleccionada > cantidadDisponible) {
+
+                mensaje.textContent =
+                    "⚠️ No puedes agregar esa cantidad. " +
+                    "Solo quedan " +
+                    cantidadDisponible +
+                    " " +
+                    producto.unidad +
+                    " disponibles.";
+
+                mensaje.style.color = "#c0392b";
+
+                return;
+            }
+
+
+            productoExistente.cantidad +=
+                cantidadSeleccionada;
+
+        } else {
+
+            carrito.push({
+
+                id: codigo,
+
+                nombre: producto.nombre,
+
+                imagen: producto.imagen,
+
+                precio: producto.precio,
+
+                cantidad: cantidadSeleccionada
+
+            });
+
+        }
+
+
+        // Guardar carrito
+        localStorage.setItem(
+            "carrito",
+            JSON.stringify(carrito)
+        );
+
+
+        // Mostrar mensaje
+        const mensaje =
+            document.getElementById("mensaje-stock");
+
+
+        mensaje.textContent =
+            "✅ Producto agregado al carrito.";
+
+
+        mensaje.style.color = "#2e7d32";
+
+    });
 } else {
 
     // ==========================================
