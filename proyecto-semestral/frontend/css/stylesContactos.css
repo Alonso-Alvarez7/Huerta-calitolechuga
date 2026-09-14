@@ -1,0 +1,194 @@
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS PARA LA PÁGINA DE CONTACTO (stylesContactos.css)
+   Modulo de contacto para HuertoHogar
+   ========================================================================== */
+
+/* --------------------------------------------------
+   1. ESTRUCTURA Y CONTENEDOR PRINCIPAL
+   -------------------------------------------------- */
+.seccion-contacto {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 25px;
+}
+
+/* Encabezado */
+.encabezado-seccion {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.encabezado-seccion h1 {
+    font-size: 2.5rem;
+    color: var(--cafe-primario, #8B4513);
+    margin-bottom: 10px;
+}
+
+.encabezado-seccion p {
+    font-size: 1.1rem;
+    color: var(--texto-suave, #666666);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Grid de dos columnas */
+.contenedor-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* --------------------------------------------------
+   2. INFORMACIÓN DE CONTACTO (PANEL IZQUIERDO)
+   -------------------------------------------------- */
+.informacion-contacto {
+    background-color: var(--blanco, #FFFFFF);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+    border-top: 4px solid var(--verde-primario, #2E8B57);
+}
+
+.informacion-contacto > h3 {
+    font-size: 1.4rem;
+    color: var(--cafe-primario, #8B4513);
+    margin-bottom: 10px;
+}
+
+.informacion-contacto > p {
+    color: var(--texto-suave, #666666);
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+.dato-contacto {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--borde-color, #E0E0E0);
+}
+
+.dato-contacto:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.dato-contacto h3 {
+    font-size: 1rem;
+    color: var(--verde-primario, #2E8B57);
+    margin-bottom: 4px;
+}
+
+.dato-contacto p {
+    font-size: 0.95rem;
+    color: var(--texto-oscuro, #333333);
+}
+
+/* --------------------------------------------------
+   3. FORMULARIO DE CONTACTO (PANEL DERECHO)
+   -------------------------------------------------- */
+.formulario-contacto {
+    background-color: var(--blanco, #FFFFFF);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.formulario-contacto h2 {
+    font-size: 1.6rem;
+    color: var(--cafe-primario, #8B4513);
+    margin-bottom: 25px;
+}
+
+.campo-form {
+    margin-bottom: 20px;
+}
+
+.campo-form label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: var(--texto-oscuro, #333333);
+}
+
+.campo-form input,
+.campo-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--borde-color, #E0E0E0);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background-color: #FAFAFA;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campo-form input:focus,
+.campo-form textarea:focus {
+    outline: none;
+    border-color: var(--verde-primario, #2E8B57);
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.15);
+    background-color: var(--blanco, #FFFFFF);
+}
+
+.campo-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Estado de los mensajes de error/validación */
+.mensaje-error {
+    color: var(--error-color, #D9534F);
+    font-size: 0.82rem;
+    margin-top: 5px;
+    min-height: 18px;
+}
+
+/* Botón primario específico para el formulario */
+.btn-primario {
+    width: 100%;
+    background-color: var(--verde-primario, #2E8B57);
+    color: var(--blanco, #FFFFFF);
+    border: none;
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.btn-primario:hover {
+    background-color: var(--verde-oscuro, #1e5e3a);
+}
+
+.btn-primario:active {
+    transform: scale(0.99);
+}
+
+/* --------------------------------------------------
+   4. ADAPTABILIDAD (RESPONSIVE DESIGN)
+   -------------------------------------------------- */
+@media (max-width: 900px) {
+    .contenedor-contacto {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .seccion-contacto {
+        padding: 30px 15px;
+    }
+
+    .encabezado-seccion h1 {
+        font-size: 2rem;
+    }
+
+    .informacion-contacto,
+    .formulario-contacto {
+        padding: 20px;
+    }
+}
